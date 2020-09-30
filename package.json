@@ -9,9 +9,11 @@
       "import": "./es/index.js",
       "require": "./index.js"
     },
-    "./es": "./es/index.js"
+    "./es": "./es/index.js",
+    "./react-router-dom": "./react-router-dom.js"
   },
   "files": [
+    "react-router-dom.js",
     "lib/**/*.js",
     "es/**/*.js"
   ],
@@ -27,10 +29,18 @@
     "url": "https://github.com/overlookjs/plugin-react-router/issues"
   },
   "dependencies": {
-    "@overlook/plugin": "^0.4.1"
+    "@overlook/plugin": "^0.4.1",
+    "@overlook/plugin-build": "^0.1.3",
+    "@overlook/plugin-fs": "^0.1.1",
+    "@overlook/plugin-load": "^0.4.4",
+    "@overlook/plugin-path": "^0.8.3",
+    "@overlook/plugin-react": "0.0.2",
+    "@overlook/plugin-react-root": "0.0.2",
+    "@overlook/route": "^0.6.5",
+    "@overlook/util-find-parent": "^0.1.0",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
-    "@overlook/route": "^0.6.5",
     "@overlookmotel/eslint-config": "^7.2.1",
     "@overlookmotel/eslint-config-jest": "^4.1.1",
     "@overlookmotel/eslint-config-node": "^2.1.2",

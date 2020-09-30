@@ -11,17 +11,13 @@
 // Exports
 
 module.exports = function itExports(reactRouterPlugin) {
-	describe.skip('methods', () => { // eslint-disable-line jest/no-disabled-tests
-		it.each([
-			'TEMP'
-		])('%s', (key) => {
-			expect(reactRouterPlugin[key]).toBeFunction();
-		});
-	});
-
 	describe('symbols', () => {
 		it.each([
-			'TEMP'
+			'REACT_ROUTER_FILE',
+			'GET_REACT_ROUTER_FILE',
+			'ROUTER_ROUTES',
+			'ADD_ROUTE',
+			'CREATE_ROUTER_FILE'
 		])('%s', (key) => {
 			expect(typeof reactRouterPlugin[key]).toBe('symbol');
 		});
