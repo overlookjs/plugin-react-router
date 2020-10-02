@@ -34,7 +34,7 @@
     "@overlook/plugin-fs": "^0.1.1",
     "@overlook/plugin-load": "^0.4.4",
     "@overlook/plugin-path": "^0.8.3",
-    "@overlook/plugin-react": "0.2.0",
+    "@overlook/plugin-react": "0.2.1",
     "@overlook/plugin-react-root": "0.0.2",
     "@overlook/route": "^0.6.5",
     "@overlook/util-find-parent": "^0.1.0",
