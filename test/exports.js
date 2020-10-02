@@ -16,7 +16,6 @@ module.exports = function itExports(reactRouterPlugin) {
 			'REACT_ROUTER_FILE',
 			'GET_REACT_ROUTER_FILE',
 			'ROUTER_ROUTES',
-			'ADD_ROUTE',
 			'CREATE_ROUTER_FILE'
 		])('%s', (key) => {
 			expect(typeof reactRouterPlugin[key]).toBe('symbol');
