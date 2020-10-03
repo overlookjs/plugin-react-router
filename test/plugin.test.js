@@ -1,6 +1,6 @@
 /* --------------------
  * @overlook/plugin-react-router module
- * Tests
+ * Plugin tests
  * ------------------*/
 
 'use strict';
