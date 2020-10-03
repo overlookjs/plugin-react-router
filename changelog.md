@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.1
+
+Refactor:
+
+* Rename `CREATE_` methods
+* Shorten + rename `createRouterRoot` function
+* Re-order imports
+
 ## 0.1.0
 
 Breaking changes:
