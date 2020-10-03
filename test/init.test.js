@@ -352,7 +352,7 @@ describe('Init', () => {
 				expect(file).toBeObject();
 				expect(file.path).toBe('?/anon.router.jsx');
 				expect(file.content.trim().split(/\n+/)).toEqual([
-					expect.stringMatching(/^import React, \{lazy\} from "[^"]+";$/),
+					expect.stringMatching(/^import React, \{Suspense, lazy\} from "[^"]+";$/),
 					expect.stringMatching(/^import \{Switch\} from "[^"]+";$/),
 					'const Route0 = lazy(() => import(/* webpackChunkName: "routeRoot" */ "/index.jsx"));',
 					'const Route1 = lazy(() => import(/* webpackChunkName: "routeChild1" */ "/child1.jsx"));',
@@ -362,15 +362,17 @@ describe('Init', () => {
 					'const Route5 = lazy(() => import(/* webpackChunkName: "routerChildRouter1" */ "?/childRouter1.router.jsx"));',
 					'import Route6 from "?/childRouter2.router.jsx";',
 					'export default () => (',
-					'  <Switch>',
-					'    <Route path="/" exact><Route0 /></Route>',
-					'    <Route path="/child1" exact><Route1 /></Route>',
-					'    <Route path="/child2" exact><Route2 /></Route>',
-					'    <Route path="/child1/child1OfChild1" exact><Route3 /></Route>',
-					'    <Route path="/child1/child2OfChild1" exact><Route4 /></Route>',
-					'    <Route path="/childRouter1"><Route5 /></Route>',
-					'    <Route path="/childRouter2"><Route6 /></Route>',
-					'  </Switch>',
+					'  <Suspense fallback={null}>',
+					'    <Switch>',
+					'      <Route path="/" exact><Route0 /></Route>',
+					'      <Route path="/child1" exact><Route1 /></Route>',
+					'      <Route path="/child2" exact><Route2 /></Route>',
+					'      <Route path="/child1/child1OfChild1" exact><Route3 /></Route>',
+					'      <Route path="/child1/child2OfChild1" exact><Route4 /></Route>',
+					'      <Route path="/childRouter1"><Route5 /></Route>',
+					'      <Route path="/childRouter2"><Route6 /></Route>',
+					'    </Switch>',
+					'  </Suspense>',
 					');'
 				]);
 			});
@@ -380,17 +382,19 @@ describe('Init', () => {
 				expect(file).toBeObject();
 				expect(file.path).toBe('?/childRouter1.router.jsx');
 				expect(file.content.trim().split(/\n+/)).toEqual([
-					expect.stringMatching(/^import React, \{lazy\} from "[^"]+";$/),
+					expect.stringMatching(/^import React, \{Suspense, lazy\} from "[^"]+";$/),
 					expect.stringMatching(/^import \{Switch\} from "[^"]+";$/),
 					'const Route0 = lazy(() => import(/* webpackChunkName: "routeChildRouter1" */ "/childRouter1.jsx"));',
 					'const Route1 = lazy(() => import(/* webpackChunkName: "routeChildRouter1Child1OfChildRouter1" */ "/child1OfChildRouter1.jsx"));',
 					'import Route2 from "/child2OfChildRouter1.jsx";',
 					'export default () => (',
-					'  <Switch>',
-					'    <Route path="/childRouter1" exact><Route0 /></Route>',
-					'    <Route path="/childRouter1/child1OfChildRouter1" exact><Route1 /></Route>',
-					'    <Route path="/childRouter1/child2OfChildRouter1" exact><Route2 /></Route>',
-					'  </Switch>',
+					'  <Suspense fallback={null}>',
+					'    <Switch>',
+					'      <Route path="/childRouter1" exact><Route0 /></Route>',
+					'      <Route path="/childRouter1/child1OfChildRouter1" exact><Route1 /></Route>',
+					'      <Route path="/childRouter1/child2OfChildRouter1" exact><Route2 /></Route>',
+					'    </Switch>',
+					'  </Suspense>',
 					');'
 				]);
 			});
@@ -400,13 +404,15 @@ describe('Init', () => {
 				expect(file).toBeObject();
 				expect(file.path).toBe('?/childRouter2.router.jsx');
 				expect(file.content.trim().split(/\n+/)).toEqual([
-					expect.stringMatching(/^import React, \{lazy\} from "[^"]+";$/),
+					expect.stringMatching(/^import React, \{Suspense, lazy\} from "[^"]+";$/),
 					expect.stringMatching(/^import \{Switch\} from "[^"]+";$/),
 					'const Route0 = lazy(() => import(/* webpackChunkName: "routeChildRouter2" */ "/childRouter2.jsx"));',
 					'export default () => (',
-					'  <Switch>',
-					'    <Route path="/childRouter2" exact><Route0 /></Route>',
-					'  </Switch>',
+					'  <Suspense fallback={null}>',
+					'    <Switch>',
+					'      <Route path="/childRouter2" exact><Route0 /></Route>',
+					'    </Switch>',
+					'  </Suspense>',
 					');'
 				]);
 			});
