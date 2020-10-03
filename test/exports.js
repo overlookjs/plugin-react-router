@@ -18,8 +18,8 @@ module.exports = function itExports(reactRouterPlugin) {
 			'REACT_ROUTER_ROOT_FILE',
 			'GET_REACT_ROUTER_ROOT_FILE',
 			'ROUTER_ROUTES',
-			'CREATE_ROUTER_FILE',
-			'CREATE_ROUTER_ROOT_FILE',
+			'CREATE_REACT_ROUTER_FILE',
+			'CREATE_REACT_ROUTER_ROOT_FILE',
 			'ROUTER_IS_LAZY',
 			'GET_ROUTER_IS_LAZY'
 		])('%s', (key) => {
