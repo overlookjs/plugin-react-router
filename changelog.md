@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2
+
+Bug fixes:
+
+* Wrap router in `<Suspense>`
+
 ## 0.1.1
 
 Refactor:
